@@ -2,12 +2,15 @@ package com.androidapp.timepicker;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by priyasindkar on 07-11-2016.
@@ -16,9 +19,10 @@ import java.util.ArrayList;
 public class TimeSloatAdapter extends RecyclerView.Adapter<TimeSloatAdapter.MyViewHolder> {
 
     private Activity activity;
-    private ArrayList<Time> timeList;
+    private ArrayList<Studio> timeList;
 
-    public TimeSloatAdapter(Activity activity, ArrayList<Time> timeList) {
+    public TimeSloatAdapter(Activity activity, ArrayList<Studio> timeList) {
+
         this.activity = activity;
         this.timeList = timeList;
 
@@ -34,8 +38,8 @@ public class TimeSloatAdapter extends RecyclerView.Adapter<TimeSloatAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.sTime.setText(timeList.get(position).getStartTime());
-        holder.eTime.setText(timeList.get(position).getEndTime());
+        holder.sTime.setText(timeList.get(position).getStime());
+        holder.eTime.setText(timeList.get(position).getEtime());
     }
 
     @Override
